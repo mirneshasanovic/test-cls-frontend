@@ -3,15 +3,33 @@
       <h1>Add New Client</h1>
       <form (ngSubmit)="addClient(crudForm)" #crudForm="ngForm">
         <div class="form-group">
-          <label for="country">Country</label>
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name"
+                 [(ngModel)]="client.name" name="name"
+                 #name="ngModel">
+        </div>  
+        <div class="form-group">
+          <label for="country">Adress</label>
+          <span class="required">*</span>
           <input type="text" class="form-control" id="country"
+                 required
+                 [(ngModel)]="client.address" name="country"
+                 #name="ngModel">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <span class="required">*</span>
+          <input type="text" class="form-control" id="country"
+                 required
                  [(ngModel)]="client.country" name="country"
                  #name="ngModel">
         </div>
         
         <div class="form-group">
           <label for="city">City</label>
+          <span class="required">*</span>
           <input type="text" class="form-control" id="city"
+                 required
                  [(ngModel)]="client.city" name="city">
         </div>
 
@@ -23,7 +41,9 @@
 
         <div class="form-group">
             <label for="contact">Contact</label>
+            <span class="required">*</span>
             <input type="text" class="form-control" id="contact"
+                required
                 [(ngModel)]="client.contact" name="contact">
         </div>
   
@@ -35,27 +55,42 @@
             <option *ngFor="let status of statuses" [value]="status">{{status}}</option>
           </select>
         </div>
-  
+        <br/>
         <button type="submit" class="btn btn-success" [disabled]="!crudForm.form.valid">Submit</button>
-        <button type="button" class="btn btn-default" (click)="newCrud(); crudForm.reset()">New Crud</button>
       </form>
     </div>
   
     <div [hidden]="!submitted">
       <h2>You submitted the following:</h2>
       <div class="row">
-        <div class="col-xs-3">Name</div>
+        <div class="col-xs-3">Client Name:</div>
         <div class="col-xs-9">{{ client.name }}</div>
       </div>
       <div class="row">
-        <div class="col-xs-3">Alter Ego</div>
-        <div class="col-xs-9">{{ client.alterEgo }}</div>
+        <div class="col-xs-3">Address:</div>
+        <div class="col-xs-9">{{ client.address }}</div>
       </div>
       <div class="row">
-        <div class="col-xs-3">Status</div>
+        <div class="col-xs-3">Country:</div>
+        <div class="col-xs-9">{{ client.country }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">City:</div>
+        <div class="col-xs-9">{{ client.city }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Industry:</div>
+        <div class="col-xs-9">{{ client.industry }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Contact:</div>
+        <div class="col-xs-9">{{ client.contact }}</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">Status:</div>
         <div class="col-xs-9">{{ client.status }}</div>
       </div>
-      <br>
-      <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+      <br/>
+        <button type="button" class="btn btn-primary" (click)="submitted=false;crudForm.reset()">Add New Client</button>
     </div>
   </div>

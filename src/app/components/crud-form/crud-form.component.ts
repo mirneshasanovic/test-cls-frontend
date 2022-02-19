@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CrudForm } from '../../crud-form';
-import { NgForm }   from '@angular/forms';
 import { CrudFormService } from 'src/app/service/crud-form.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { CrudFormService } from 'src/app/service/crud-form.service';
 })
 export class CrudFormComponent {
   constructor (private dataService: CrudFormService){}
-  client = new CrudForm(123, 'tr', '', '', '', '');
+  client = new CrudForm(123, '', '', '', '', '', '', '');
   statuses = ['Active', 'Inactive', 'Unknown'];
   submitted = false;
  
@@ -24,7 +23,7 @@ export class CrudFormComponent {
   }
 
   newCrud() {
-    this.client = new CrudForm(42, '', '', '', '123', 'Active');
+    this.client = new CrudForm(42, '', '', '', '', '123', '','Active');
   }
 
 }
