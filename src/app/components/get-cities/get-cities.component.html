@@ -1,0 +1,15 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let city of cities; let idx = index">
+            <td>{{city.city}}</td>
+            <td><span class="pointer text-danger"><i class="fas fa-trash-alt"></i></span></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
