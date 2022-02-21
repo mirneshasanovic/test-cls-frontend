@@ -9,17 +9,16 @@ import { CrudFormService } from 'src/app/service/crud-form.service';
 })
 export class CrudFormComponent {
   constructor (private dataService: CrudFormService){}
-  client = new CrudForm(123, '', '', '', '', '', '', '');
+  client = new CrudForm(1, '', '', '', '', '', '', '');
   statuses = ['Active', 'Inactive', 'Unknown'];
   submitted = false;
  
 
   addClient() { 
     this.submitted = true;
+    console.log(this.client);
     this.dataService.addClient(this.client).subscribe(res => {
-      console.log(res);
     });
-  
   }
 
   newCrud() {

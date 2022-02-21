@@ -1,6 +1,6 @@
 <div class="container">
     <div [hidden]="submitted">
-      <h1>Add New Client</h1>
+      <h3>Add New Client:</h3>
       <form (ngSubmit)="addClient(crudForm)" #crudForm="ngForm">
         <div class="form-group">
           <label for="name">Name</label>
@@ -64,31 +64,31 @@
       <h2>You submitted the following:</h2>
       <div class="row">
         <div class="col-xs-3">Client Name:</div>
-        <div class="col-xs-9">{{ client.name }}</div>
+        <div class="col-xs-9"><i>{{ client.name }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">Address:</div>
-        <div class="col-xs-9">{{ client.address }}</div>
+        <div class="col-xs-9"><i>{{ client.address }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">Country:</div>
-        <div class="col-xs-9">{{ client.country }}</div>
+        <div class="col-xs-9"><i>{{ client.country }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">City:</div>
-        <div class="col-xs-9">{{ client.city }}</div>
+        <div class="col-xs-9"><i>{{ client.city }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">Industry:</div>
-        <div class="col-xs-9">{{ client.industry }}</div>
+        <div class="col-xs-9"><i>{{ client.industry }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">Contact:</div>
-        <div class="col-xs-9">{{ client.contact }}</div>
+        <div class="col-xs-9"><i>{{ client.contact }}</i></div>
       </div>
       <div class="row">
         <div class="col-xs-3">Status:</div>
-        <div class="col-xs-9">{{ client.status }}</div>
+        <div class="col-xs-9"><i>{{ client.status }}</i></div>
       </div>
       <br/>
         <button type="button" class="btn btn-primary" (click)="submitted=false;crudForm.reset()">Add New Client</button>

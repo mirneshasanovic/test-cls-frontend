@@ -1,8 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+<div class="container">
+  <div class="buttons">
+    <a routerLink="/crud-form">
+      <button class="btn btn-success"> Add new client </button>
+    </a>
+    <a routerLink="/get-cities">
+      <button class="btn btn-success"> Show cities </button>
+    </a>
+    <a routerLink="/get-countries">
+      <button class="btn btn-success"> Show countries </button>
+    </a>
+    <a routerLink="/get-industry">
+      <button class="btn btn-success"> Show industry </button>
+    </a>
+    <a routerLink="/get-contact">
+      <button class="btn btn-success"> Show contacts </button>
+    </a>
+  </div>
+  <router-outlet></router-outlet>
 </div>
-
-<router-outlet></router-outlet>

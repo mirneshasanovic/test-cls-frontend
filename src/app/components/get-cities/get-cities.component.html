@@ -1,4 +1,4 @@
-<div class="container">
+
     <table class="table">
         <thead>
           <tr>
@@ -8,8 +8,14 @@
         <tbody>
         <tr *ngFor="let city of cities; let idx = index">
             <td>{{city.city}}</td>
-            <td><span class="pointer text-danger"><i class="fas fa-trash-alt"></i></span></td>
+              <td>
+                <div class="edit-delete">
+                  <a routerLink="/edit-city/{{city.id}}/{{city.city}}">
+                    <button type="button" class="btn btn-primary">Edit</button>
+                  </a>
+                  <button type="button" class="btn btn-danger" (click) ="deleteCity(city.id);removeCityFromList(city, i)">Delete</button>
+                  </div>
+              </td>
           </tr>
         </tbody>
       </table>
-</div>

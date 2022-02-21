@@ -1,0 +1,15 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <h3>Edit City:</h3>
+      <form (ngSubmit)="editCity(city.id,editForm);" #editForm="ngForm">
+        <div class="form-group">
+          <label for="name">Insert new city name:</label>
+          <input type="text" class="form-control" id="name"
+                 [(ngModel)]="city.city" name="name"
+                 #name="ngModel">
+        </div>  
+        <br/>
+        <button type="submit" class="btn btn-success" [disabled]="!editForm.form.valid">Submit</button>
+      </form>
+    </div>
+  </div>
